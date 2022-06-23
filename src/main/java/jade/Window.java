@@ -75,12 +75,8 @@ public class Window {
     }
 
     public void loop() {
-        glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
 
-        glfwSwapBuffers(glfwWindow);
-
-        while (!glfwWindowShouldClose(glfwWindow))
+        while (!glfwWindowShouldClose(glfwWindow)) {
             // Poll events
             glfwPollEvents();
 
@@ -88,5 +84,6 @@ public class Window {
             glClear(GL_COLOR_BUFFER_BIT);
 
             glfwSwapBuffers(glfwWindow);
+        }
     }
 }
