@@ -2,6 +2,7 @@ package jade;
 
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL20;
+import renderer.Shader;
 
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
@@ -41,7 +42,7 @@ public class LevelEditorScene extends Scene {
         // position             //color
          0.5f, -0.5f, 0.0f,     1.0f, 0.0f, 0.0f, 1.0f, // Bottom right 0
         -0.5f,  0.5f, 0.0f,     0.0f, 1.0f, 0.0f, 1.0f, // Top left     1
-         0.5f,  0.5f, 0.0f,     0.0f, 0.0f, 1.0f, 1.0f, // Top right    2
+         0.5f,  0.5f, 0.0f,     1.0f, 0.0f, 1.0f, 1.0f, // Top right    2
         -0.5f, -0.5f, 0.0f,     1.0f, 1.0f, 0.0f, 1.0f, // Bottom left  3
     };
 
@@ -54,7 +55,7 @@ public class LevelEditorScene extends Scene {
     private int vaoID, vboID, eboID;
 
     public LevelEditorScene() {
-
+        Shader testShader = new Shader("assets/shaders/default.glsl");
     }
 
     @Override
